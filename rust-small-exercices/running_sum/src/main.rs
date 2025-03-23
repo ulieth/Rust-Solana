@@ -4,12 +4,13 @@
 // See if you can figure out a "Rusty" way to do it using Rust's iterators and methods
 
 fn running_sum(nums: Vec<i32>) -> Vec<i32> {
-
+  println!("{:p}", &nums[..]);
  let cumsum: Vec<i32> = nums.into_iter().scan(0, |acc, x| {
     *acc += x;
     Some(*acc)
  })
  .collect();
+ println!("{:p}", &cumsum[..]);
  cumsum
 }
 
